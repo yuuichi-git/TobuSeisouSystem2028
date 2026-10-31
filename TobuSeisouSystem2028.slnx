@@ -1,0 +1,10 @@
+<Solution>
+  <Project Path="Common/Common.csproj" />
+  <Project Path="Dao/Dao.csproj" />
+  <Project Path="Entity/Entity.csproj" />
+  <Project Path="RisControls/RisControls.csproj" />
+  <Project Path="StartForm/StartForm.csproj" />
+  <Project Path="TobuSeisouSystem2028/TobuSeisouSystem2028.csproj" />
+  <Project Path="VehicleDispatch/VehicleDispatch.csproj" />
+  <Project Path="Vo/Vo.csproj" />
+</Solution>
