@@ -117,5 +117,13 @@ namespace Entity {
             get => _deleteFlag;
             set => _deleteFlag = value;
         }
+
+        /// <summary>
+        /// ListVehicleDispatchBodyを保持するプロパティ
+        /// Listにしている理由は日曜～土曜の曜日ごとに車両を割り当てるため
+        /// </summary>
+        public virtual List<VehicleDispatchBody> ListVehicleDispatchBody {
+            get; set;
+        } = new();
     }
 }

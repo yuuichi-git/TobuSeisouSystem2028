@@ -29,11 +29,12 @@ namespace RisControls {
              */
             InitializeComponent();
             /*
-             * 和暦設定
+             * 西暦設定(初期化)
              */
             _cultureInfo.DateTimeFormat.Calendar = new JapaneseCalendar();
             this.Format = DateTimePickerFormat.Custom;
-            this.CustomFormat = _defaultDateTime.ToString(" ggyy年MM月dd日(dddd)", _cultureInfo);
+            this.CultureFlag = false;
+            this.CustomFormat = this.Value.ToString(" yyyy年MM月dd日(dddd)");
             this.Value = _defaultDateTime;
             this.Refresh();
         }

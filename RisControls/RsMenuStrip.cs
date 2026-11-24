@@ -9,6 +9,10 @@ namespace RisControls {
         /// true:Local false:Network
         /// </summary>
         private bool _toolStripMenuItemDataBaseLocalFlag = false;
+        /// <summary>
+        /// true:労供短期の情報を表示する false:労供短期の情報を表示しない
+        /// </summary>
+        private bool _toolStripMenuItemViewProperFlag = false;
 
         /// <summary>
         /// コンストラクター
@@ -37,6 +41,13 @@ namespace RisControls {
             toolStripMenuItemEdit.DropDownItems.Add(CreateToolStripMenuItem(toolStripMenuItemEdit.DropDownItems, "ToolStripMenuItemInsertNewRecord", "新規レコード作成", ToolStripMenuItem_Click!));
             toolStripMenuItemEdit.DropDownItems.Add(CreateToolStripMenuItem(toolStripMenuItemEdit.DropDownItems, "ToolStripMenuItemUpdateTaitou", "台東資源収集量入力", ToolStripMenuItem_Click!));
             this.Items.Add(toolStripMenuItemEdit);
+            /*
+             * 表示
+             */
+            ToolStripMenuItem toolStripMenuItemView = CreateToolStripMenuItem(this.Items, "ToolStripMenuItemView", "表示", null);
+            ToolStripMenuItem toolStripMenuItemViewProper = CreateToolStripMenuItem(toolStripMenuItemView.DropDownItems, "ToolStripMenuItemViewProper", "労供短期の情報を表示する", ToolStripMenuItem_Click!);
+            toolStripMenuItemViewProper.Checked = ToolStripMenuItemViewProperFlag;
+            toolStripMenuItemViewProper.CheckOnClick = true;
             /*
              * データベース
              */
@@ -130,10 +141,21 @@ namespace RisControls {
             Event_RsMenuStrip_ToolStripMenuItem_Click?.Invoke(sender, e);
         }
 
+        //----------------------------------------------------------------------------------
+        //
+        // プロパティ
+        //
+        //----------------------------------------------------------------------------------
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool ToolStripMenuItemDataBaseLocalFlag {
             get => _toolStripMenuItemDataBaseLocalFlag;
             set => _toolStripMenuItemDataBaseLocalFlag = value;
+        }
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public bool ToolStripMenuItemViewProperFlag {
+            get => _toolStripMenuItemViewProperFlag;
+            set => _toolStripMenuItemViewProperFlag = value;
         }
     }
 }

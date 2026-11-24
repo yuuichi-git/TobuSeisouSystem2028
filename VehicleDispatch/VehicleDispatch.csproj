@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\Dao\Dao.csproj" />
     <ProjectReference Include="..\RisControls\RisControls.csproj" />
     <ProjectReference Include="..\Vo\Vo.csproj" />

@@ -40,7 +40,7 @@ namespace Dao {
         /// </summary>
         /// <param name="options"></param>
         protected override void OnConfiguring(DbContextOptionsBuilder options) {
-            options.UseSqlServer("Server=" + Resources.DataBaseServer + ";" +
+            options.UseSqlServer("Server=" + Resources.DataBaseServerLocal + ";" +
                                  "Database=" + Resources.DataBaseName + ";" +
                                  "User ID=" + Resources.UserName + ";" +
                                  "Password=" + Resources.UserPassword + ";" +
@@ -55,7 +55,14 @@ namespace Dao {
             modelBuilder.Entity<LoginUser>().Property(u => u.UserId).HasMaxLength(50);
             modelBuilder.Entity<LoginUser>().Property(u => u.UserPassword).HasMaxLength(64); // SHA256
             modelBuilder.Entity<LoginUser>().Property(u => u.DisplayName).HasMaxLength(100);
-
+            /*
+             * VehicleDispatchHead ⇔ VehicleDispatchBody のリレーションを定義
+             */
+            modelBuilder.Entity<VehicleDispatchBody>().HasOne<VehicleDispatchHead>()
+                                                      .WithMany(x => x.ListVehicleDispatchBody)
+                                                      .HasForeignKey(x => new { x.SetCode, x.FinancialYear })
+                                                      .HasPrincipalKey(x => new { x.SetCode, x.FinancialYear })
+                                                      .IsRequired(false);
         }
     }
 

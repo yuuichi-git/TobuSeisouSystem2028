@@ -34,15 +34,15 @@ namespace Entity {
         private string _remarks;
         private string _telephoneNumber;
         private string _cellphoneNumber;
-        private byte[] _picture;
-        private byte[] _stampPicture;
+        private byte[]? _picture;
+        private byte[]? _stampPicture;
         private string _bloodType;
         private DateTime _selectionDate;
         private DateTime _notSelectionDate;
         private string _notSelectionReason;
-        private LicenseMaster _licenseMaster;
-        private List<StaffHistory> _listStaffHistory;
-        private List<StaffExperience> _listStaffExperience;
+        //private LicenseMaster _licenseMaster;
+        //private List<StaffHistory> _listStaffHistory;
+        //private List<StaffExperience> _listStaffExperience;
         private bool _contractFlag;
         private DateTime _contractDate;
         private bool _paidLeaveFlag;                                                    // 2026-06-11
@@ -57,7 +57,7 @@ namespace Entity {
         private bool _medicalCheckupFlag;
         private bool _toukanpoFlag;
         private bool _riskAssessmentFlag;                                               // 2026-08-31
-        private List<StaffFamily> _listStaffFamily;
+        //private List<StaffFamily> _listStaffFamily;
         private string _urgentTelephoneNumber;
         private string _urgentTelephoneMethod;
         private DateTime _healthInsuranceDate;
@@ -72,11 +72,11 @@ namespace Entity {
         private DateTime _workerAccidentInsuranceDate;
         private string _workerAccidentInsuranceNumber;
         private string _workerAccidentInsuranceNote;
-        private List<StaffMedicalExamination> _listStaffMedicalExamination;
-        private List<StaffCarViolate> _listStaffCarViolate;
-        private List<StaffEducate> _listStaffEducate;
-        private List<StaffProper> _listStaffProper;
-        private List<StaffPunishment> _listStaffPunishment;
+        //private List<StaffMedicalExamination> _listStaffMedicalExamination;
+        //private List<StaffCarViolate> _listStaffCarViolate;
+        //private List<StaffEducate> _listStaffEducate;
+        //private List<StaffProper> _listStaffProper;
+        //private List<StaffPunishment> _listStaffPunishment;
         private string _insertPcName;
         private DateTime _insertYmdHms;
         private string _updatePcName;
@@ -114,9 +114,9 @@ namespace Entity {
             _selectionDate = _defaultDateTime;
             _notSelectionDate = _defaultDateTime;
             _notSelectionReason = string.Empty;
-            _licenseMaster = new LicenseMaster();
-            _listStaffHistory = new List<StaffHistory>();
-            _listStaffExperience = new List<StaffExperience>();
+            //_licenseMaster = new LicenseMaster();
+            //_listStaffHistory = new List<StaffHistory>();
+            //_listStaffExperience = new List<StaffExperience>();
             _contractFlag = false;
             _contractDate = _defaultDateTime;
             _paidLeaveFlag = false;
@@ -131,7 +131,7 @@ namespace Entity {
             _medicalCheckupFlag = false;
             _toukanpoFlag = false;
             _riskAssessmentFlag = false; // 2026-08-31
-            _listStaffFamily = new List<StaffFamily>();
+            //_listStaffFamily = new List<StaffFamily>();
             _urgentTelephoneNumber = string.Empty;
             _urgentTelephoneMethod = string.Empty;
             _healthInsuranceDate = _defaultDateTime;
@@ -146,11 +146,11 @@ namespace Entity {
             _workerAccidentInsuranceDate = _defaultDateTime;
             _workerAccidentInsuranceNumber = string.Empty;
             _workerAccidentInsuranceNote = string.Empty;
-            _listStaffMedicalExamination = new List<StaffMedicalExamination>();
-            _listStaffCarViolate = new List<StaffCarViolate>();
-            _listStaffEducate = new List<StaffEducate>();
-            _listStaffProper = new List<StaffProper>();
-            _listStaffPunishment = new List<StaffPunishment>();
+            //_listStaffMedicalExamination = new List<StaffMedicalExamination>();
+            //_listStaffCarViolate = new List<StaffCarViolate>();
+            //_listStaffEducate = new List<StaffEducate>();
+            //_listStaffProper = new List<StaffProper>();
+            //_listStaffPunishment = new List<StaffPunishment>();
             _insertPcName = string.Empty;
             _insertYmdHms = _defaultDateTime;
             _updatePcName = string.Empty;
@@ -302,16 +302,16 @@ namespace Entity {
         /// <summary>
         /// 写真
         /// </summary>
-        public byte[] Picture {
+        public byte[]? Picture {
             get => _picture;
             set => _picture = value;
         }
         /// <summary>
         /// 印影
         /// </summary>
-        public byte[] StampPicture {
-            get => this._stampPicture;
-            set => this._stampPicture = value;
+        public byte[]? StampPicture {
+            get => _stampPicture;
+            set => _stampPicture = value;
         }
         /// <summary>
         /// 血液型
@@ -344,24 +344,24 @@ namespace Entity {
         /// <summary>
         /// 免許証番号
         /// </summary>
-        public LicenseMaster LicenseMaster {
-            get => _licenseMaster;
-            set => _licenseMaster = value;
-        }
+        //public LicenseMaster LicenseMaster {
+        //    get => _licenseMaster;
+        //    set => _licenseMaster = value;
+        //}
         /// <summary>
         /// 職業履歴
         /// </summary>
-        public List<StaffHistory> ListHStaffHistory {
-            get => _listStaffHistory;
-            set => _listStaffHistory = value;
-        }
+        //public List<StaffHistory> ListHStaffHistory {
+        //    get => _listStaffHistory;
+        //    set => _listStaffHistory = value;
+        //}
         /// <summary>
         /// 過去に運転経験のある自動車
         /// </summary>
-        public List<StaffExperience> ListHStaffExperience {
-            get => _listStaffExperience;
-            set => _listStaffExperience = value;
-        }
+        //public List<StaffExperience> ListHStaffExperience {
+        //    get => _listStaffExperience;
+        //    set => _listStaffExperience = value;
+        //}
         /// <summary>
         /// 契約フラグ
         /// true:契約期間が１年ではない場合 false:契約期間が１年(通常)
@@ -471,10 +471,10 @@ namespace Entity {
         /// <summary>
         /// 家族構成
         /// </summary>
-        public List<StaffFamily> ListHStaffFamily {
-            get => _listStaffFamily;
-            set => _listStaffFamily = value;
-        }
+        //public List<StaffFamily> ListHStaffFamily {
+        //    get => _listStaffFamily;
+        //    set => _listStaffFamily = value;
+        //}
         /// <summary>
         /// 緊急連絡先
         /// </summary>
@@ -552,38 +552,38 @@ namespace Entity {
         /// <summary>
         /// 健康診断記録
         /// </summary>
-        public List<StaffMedicalExamination> ListHStaffMedicalExamination {
-            get => _listStaffMedicalExamination;
-            set => _listStaffMedicalExamination = value;
-        }
+        //public List<StaffMedicalExamination> ListHStaffMedicalExamination {
+        //    get => _listStaffMedicalExamination;
+        //    set => _listStaffMedicalExamination = value;
+        //}
         /// <summary>
         /// 免許証違反記録
         /// </summary>
-        public List<StaffCarViolate> ListHStaffCarViolate {
-            get => _listStaffCarViolate;
-            set => _listStaffCarViolate = value;
-        }
+        //public List<StaffCarViolate> ListHStaffCarViolate {
+        //    get => _listStaffCarViolate;
+        //    set => _listStaffCarViolate = value;
+        //}
         /// <summary>
         /// 教育指導記録
         /// </summary>
-        public List<StaffEducate> ListHStaffEducate {
-            get => _listStaffEducate;
-            set => _listStaffEducate = value;
-        }
+        //public List<StaffEducate> ListHStaffEducate {
+        //    get => _listStaffEducate;
+        //    set => _listStaffEducate = value;
+        //}
         /// <summary>
         /// 適正診断記録
         /// </summary>
-        public List<StaffProper> ListHStaffProper {
-            get => _listStaffProper;
-            set => _listStaffProper = value;
-        }
+        //public List<StaffProper> ListHStaffProper {
+        //    get => _listStaffProper;
+        //    set => _listStaffProper = value;
+        //}
         /// <summary>
         /// 賞罰・譴責記録
         /// </summary>
-        public List<StaffPunishment> ListHStaffPunishment {
-            get => _listStaffPunishment;
-            set => _listStaffPunishment = value;
-        }
+        //public List<StaffPunishment> ListHStaffPunishment {
+        //    get => _listStaffPunishment;
+        //    set => _listStaffPunishment = value;
+        //}
         public string InsertPcName {
             get => _insertPcName;
             set => _insertPcName = value;

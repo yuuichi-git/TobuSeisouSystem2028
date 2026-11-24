@@ -19,7 +19,7 @@ namespace Entity {
         private string _registrationNumber2;
         private string _registrationNumber3;
         private string _registrationNumber4;
-        private int _managedSpace;
+        private int _garageCode;
         private int _doorNumber;
         private DateTime _registrationDate;
         private DateTime _firstRegistrationDate;
@@ -56,10 +56,10 @@ namespace Entity {
         private string _baseAddress;
         private DateTime _expirationDate;
         private string _remarks;
-        private byte[] _compulsoryAutomobileLiabilityInsuranceOld;
-        private byte[] _compulsoryAutomobileLiabilityInsuranceNew;
-        private byte[] _vehicleInspectionCertificatePicture;    // 2024-08-09 追加
-        private byte[] _recordDetailsPicture;                   // 2024-08-09 名前変更
+        private byte[]? _compulsoryAutomobileLiabilityInsuranceOld;
+        private byte[]? _compulsoryAutomobileLiabilityInsuranceNew;
+        private byte[]? _vehicleInspectionCertificatePicture;    // 2024-08-09 追加
+        private byte[]? _recordDetailsPicture;                   // 2024-08-09 名前変更
         private bool _emergencyVehicleFlag;                     // 2024-08-13
         private DateTime _emergencyVehicleDate;                 // 2024-08-13
         private bool _digitalTachographFlag;                    // 2025-08-02
@@ -90,7 +90,7 @@ namespace Entity {
             _registrationNumber2 = string.Empty;
             _registrationNumber3 = string.Empty;
             _registrationNumber4 = string.Empty;
-            _managedSpace = default;
+            _garageCode = default;
             _doorNumber = default;
             _registrationDate = _defaultDateTime;
             _firstRegistrationDate = _defaultDateTime;
@@ -204,9 +204,9 @@ namespace Entity {
         /// 車庫地
         /// 1:足立 2:三郷
         /// </summary>
-        public int ManagedSpace {
-            get => _managedSpace;
-            set => _managedSpace = value;
+        public int GarageCode {
+            get => _garageCode;
+            set => _garageCode = value;
         }
         /// <summary>
         /// ドア番号
@@ -468,7 +468,7 @@ namespace Entity {
         /// <summary>
         /// 自賠責保険証画像(旧)
         /// </summary>
-        public byte[] CompulsoryAutomobileLiabilityInsuranceOld {
+        public byte[]? CompulsoryAutomobileLiabilityInsuranceOld {
             get {
                 return _compulsoryAutomobileLiabilityInsuranceOld;
             }
@@ -479,7 +479,7 @@ namespace Entity {
         /// <summary>
         /// 自賠責保険証画像(新)
         /// </summary>
-        public byte[] CompulsoryAutomobileLiabilityInsuranceNew {
+        public byte[]? CompulsoryAutomobileLiabilityInsuranceNew {
             get {
                 return _compulsoryAutomobileLiabilityInsuranceNew;
             }
@@ -490,14 +490,14 @@ namespace Entity {
         /// <summary>
         /// 車検証画像(車検証)
         /// </summary>
-        public byte[] VehicleInspectionCertificatePicture {
+        public byte[]? VehicleInspectionCertificatePicture {
             get => _vehicleInspectionCertificatePicture;
             set => _vehicleInspectionCertificatePicture = value;
         }
         /// <summary>
         /// 車検証画像(自動車検査証記録事項)
         /// </summary>
-        public byte[] RecordDetailsPicture {
+        public byte[]? RecordDetailsPicture {
             get => _recordDetailsPicture;
             set => _recordDetailsPicture = value;
         }
